@@ -25,7 +25,7 @@ public class User {
     //Bidirectional mapping between user and country
     //user is parent
     @OneToOne(mappedBy = "user",cascade = CascadeType.ALL)
-    private Country country;
+    private Country originalCountry;
 
     //Bidirectional mapping between user and connection
     //user is parent
@@ -36,16 +36,22 @@ public class User {
         return serviceProviderList;
     }
 
+    public User(String username, String password, Country originalCountry) {
+        this.username = username;
+        this.password = password;
+        this.originalCountry = originalCountry;
+    }
+
     public void setServiceProviderList(List<ServiceProvider> serviceProviderList) {
         this.serviceProviderList = serviceProviderList;
     }
 
-    public Country getCountry() {
-        return country;
+    public Country getOriginalCountry() {
+        return originalCountry;
     }
 
-    public void setCountry(Country country) {
-        this.country = country;
+    public void setOriginalCountry(Country originalCountry) {
+        this.originalCountry = originalCountry;
     }
 
     public List<Connection> getConnectionList() {
@@ -55,6 +61,7 @@ public class User {
     public void setConnectionList(List<Connection> connectionList) {
         this.connectionList = connectionList;
     }
+
 
     public User() {
     }

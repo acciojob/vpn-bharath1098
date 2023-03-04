@@ -21,18 +21,21 @@ public class ServiceProvider {
     // bidirectional mapping between connection and service provider
     // service provider is parent
     @OneToMany(mappedBy = "serviceProvider",cascade = CascadeType.ALL)
-    List<Connection> connectionList=new ArrayList<>();
+    private List<Connection> connectionList=new ArrayList<>();
 
     // bidirectional mapping between user and service provider
     // service provider is parent
     @ManyToMany(mappedBy = "serviceProvider",cascade = CascadeType.ALL)
-    List<User> users=new ArrayList<>();
+    private List<User> users=new ArrayList<>();
 
     // bidirectional mapping between country and service provider
     // service provider is parent
     @OneToMany(mappedBy = "serviceProvider",cascade = CascadeType.ALL)
-    List<Country> countryList=new ArrayList<>();
+    private List<Country> countryList=new ArrayList<>();
 
+    public ServiceProvider(String name) {
+        this.name = name;
+    }
 
     public List<Connection> getConnectionList() {
         return connectionList;

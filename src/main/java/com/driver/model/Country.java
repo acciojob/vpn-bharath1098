@@ -24,6 +24,11 @@ public class Country {
     @JoinColumn
     private User user;
 
+    public Country(CountryName countryName, String code) {
+        this.countryName = countryName;
+        this.code = code;
+    }
+
     public ServiceProvider getServiceProvider() {
         return serviceProvider;
     }

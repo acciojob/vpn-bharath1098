@@ -16,7 +16,12 @@ public class Admin {
     // bidirectional mapping between admin and service provider
     // admin is parent
     @OneToMany(mappedBy = "admin",cascade = CascadeType.ALL)
-    List<ServiceProvider> serviceProviders=new ArrayList<>();
+    private List<ServiceProvider> serviceProviders=new ArrayList<>();
+
+    public Admin(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 
     public List<ServiceProvider> getServiceProviders() {
         return serviceProviders;
