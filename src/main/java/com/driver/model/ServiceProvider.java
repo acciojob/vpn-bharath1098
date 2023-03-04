@@ -25,7 +25,7 @@ public class ServiceProvider {
 
     // bidirectional mapping between user and service provider
     // service provider is parent
-    @ManyToMany(mappedBy = "serviceProvider",cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "serviceProviderList",cascade = CascadeType.ALL)
     private List<User> users=new ArrayList<>();
 
     // bidirectional mapping between country and service provider
