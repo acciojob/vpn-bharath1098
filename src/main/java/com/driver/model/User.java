@@ -30,7 +30,7 @@ public class User {
     //Bidirectional mapping between user and connection
     //user is parent
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
-    private List<Connection> connectionList=new ArrayList<>();
+    private List<Connection> connectionList;
 
     public List<ServiceProvider> getServiceProviderList() {
         return serviceProviderList;

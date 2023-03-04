@@ -42,7 +42,7 @@ public class ConnectionServiceImpl implements ConnectionService {
 
                 for (Country country : countryList) {
 
-                    if (countryName.equalsIgnoreCase(country.getCountryName().toString())) {
+                    if (countryName.equalsIgnoreCase(country.getCountryName().toString()) && min>serviceProvider.getId()) {
                         min = serviceProvider.getId();
                         serviceProvider1 = serviceProvider;
                         country1 = country;
