@@ -61,7 +61,7 @@ public class UserServiceImpl implements UserService {
             return user;
         }
         else {
-            throw new Exception("country not found");
+            throw new Exception("Country not found");
              }
         }
 

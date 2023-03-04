@@ -80,6 +80,6 @@ public class AdminServiceImpl implements AdminService {
             return serviceProvider;
         }
         else
-            throw new Exception("country not added");
+            throw new Exception("Country not found");
     }
 }
